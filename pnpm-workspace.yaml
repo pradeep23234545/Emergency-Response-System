@@ -1,0 +1,10 @@
+packages:
+  - apps/*
+  - packages/*
+
+# Supply-chain guard: only install package versions published at least 1 day ago.
+minimumReleaseAge: 1440
+
+# Only these packages may run install scripts.
+allowBuilds:
+  esbuild: true

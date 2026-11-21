@@ -1,0 +1,28 @@
+{
+  "name": "emergency-corridor-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-powered predictive emergency corridor and multi-vehicle coordination system (SIH26205).",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter @corridor/api --filter @corridor/web run dev",
+    "dev:api": "pnpm --filter @corridor/api run dev",
+    "dev:web": "pnpm --filter @corridor/web run dev",
+    "build": "pnpm --filter @corridor/web --filter @corridor/api run build",
+    "start": "pnpm --filter @corridor/api run start",
+    "test": "pnpm --filter @corridor/api run test",
+    "typecheck": "pnpm -r run typecheck",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "pnpm run format:check && pnpm run typecheck && pnpm run test"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "typescript": "~5.9.3"
+  }
+}
